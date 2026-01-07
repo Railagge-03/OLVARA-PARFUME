@@ -1,0 +1,82 @@
+:root {
+    --primary: #ffffff;
+    --accent: #d4af37;
+    --bg-dark: #0a0a0a;
+    --card-bg: #151515;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--primary);
+    overflow-x: hidden; /* Biar gak goyang ke samping */
+}
+
+header {
+    position: fixed; top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 8%; z-index: 9999;
+    background: rgba(0,0,0,0.8);
+    transition: 0.4s;
+}
+
+header.sticky { background: #000; padding: 12px 8%; }
+
+.logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: var(--accent); }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { text-decoration: none; color: #fff; font-size: 0.8rem; text-transform: uppercase; }
+
+/* Hamburger Style */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+.bar { width: 25px; height: 3px; background: #fff; margin: 3px 0; transition: 0.3s; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1616948055600-8f940d05f63a?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+}
+.hero-overlay { height: 100%; width: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; }
+.hero-text { text-align: center; }
+.hero-text h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+
+/* FIX JARAK SHOP NOW */
+.hero-text p { margin-bottom: 35px; color: #ccc; }
+.cta-button { padding: 15px 35px; border: 1px solid #fff; color: #fff; text-decoration: none; transition: 0.3s; }
+.cta-button:hover { background: #fff; color: #000; }
+
+/* Catalog */
+.catalog { padding: 80px 8%; }
+.container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.product-card { background: var(--card-bg); padding: 15px; border-radius: 5px; text-align: center; }
+.product-img { height: 300px; overflow: hidden; position: relative; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; }
+.overlay-buy { position: absolute; bottom: -50px; width: 100%; background: rgba(0,0,0,0.8); padding: 10px; transition: 0.3s; }
+.product-card:hover .overlay-buy { bottom: 0; }
+.overlay-buy button { background: none; border: 1px solid #fff; color: #fff; padding: 5px 15px; cursor: pointer; }
+
+/* RESPONSIVE HP */
+@media screen and (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    nav {
+        position: fixed; right: -100%; top: 0; height: 100vh; width: 70%;
+        background: #111; transition: 0.5s; z-index: 1000;
+    }
+    nav.active { right: 0; }
+    nav ul { flex-direction: column; padding-top: 100px; align-items: center; }
+    .hero-text h1 { font-size: 2.2rem; }
+}
+
+footer {
+	text-align: center;
+	padding: 40px;
+	border-top: 1px solid #222;
+	font-size: 0.8rem;
+	color: #555;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLVARA PARFUME | Signature Fragrance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="logo">OLVARA<span>PARFUME</span></div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Collections</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="javascript:void(0)" class="cart-icon" onclick="sendToWhatsapp()">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h5>LIMITED EDITION</h5>
+                <h1>ELEGANCE IN EVERY DROP</h1>
+                <p>Rasakan sensasi aroma premium yang tahan hingga 12 jam.</p>
+                <a href="#catalog" class="cta-button">SHOP NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="section-title">
+            <h2>OUR COLLECTIONS</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="container">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="parfume1.jpeg" alt="Parfum 1">
+                    <div class="overlay-buy">
+                        <button onclick="addToCart('Pacefull')">Quick Add</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>PACEFULL</h3>
+                    <p class="notes">Woody & Velvet, Creamy Vanilla, Soft Cashmere & Cedar</p>
+                    <p class="price">IDR 60.000</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="badge">Hot</span>
+                    <img src="parfume2.jpeg" alt="Parfum 2">
+                    <div class="overlay-buy">
+                        <button onclick="addToCart('OCEANIC BLUE')">Quick Add</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>OCEANIC BLUE</h3>
+                    <p class="notes">Tonka Bean & Benzoin, Amber & Musk</p>
+                    <p class="price">IDR 60.000</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="parfume3.jpeg" alt="Parfum 3">
+                    <div class="overlay-buy">
+                        <button onclick="addToCart('VANILLA GLACE')">Quick Add</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>VANILLA GLACE</h3>
+                    <p class="notes">White Musk, Benzoin / Tonka Bean</p>
+                    <p class="price">IDR 60.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 OLVARA PARFUME. Crafted for the Bold.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
