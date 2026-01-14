@@ -24,7 +24,7 @@ function addToCart(item) {
     cart.push(item);
     count++;
     document.querySelector('.cart-icon').innerText = `Cart (${count})`;
-    alert(item + " masuk keranjang! Cek menu Cart buat kirim ke WA.");
+    alert(item + " masuk keranjang! cek Chart untuk konfirmasi pesanan lewat Whatsapp.");
 }
 
 function sendToWhatsapp() {
@@ -71,3 +71,62 @@ document.querySelectorAll('.product-card').forEach(c => {
     c.style.transition = "0.6s";
     observer.observe(c);
 });
+
+// --- FITUR RATING & REVIEW ---
+
+let selectedRating = 0;
+const stars = document.querySelectorAll('#star-input .star');
+
+// Logika milih bintang
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        selectedRating = star.getAttribute('data-value');
+        updateStars();
+    });
+});
+
+function updateStars() {
+    stars.forEach(star => {
+        if (star.getAttribute('data-value') <= selectedRating) {
+            star.classList.add('active');
+        } else {
+            star.classList.remove('active');
+        }
+    });
+}
+
+// Logika submit review
+function submitReview() {
+    const name = document.getElementById('reviewer-name').value;
+    const text = document.getElementById('review-text').value;
+    const reviewList = document.getElementById('review-list');
+
+    if (!name || !text || selectedRating === 0) {
+        alert("mohon isi terlebih dahulu sebelum memberikan ulasan.");
+        return;
+    }
+
+    // Buat element review baru
+    const starString = "★".repeat(selectedRating) + "☆".repeat(5 - selectedRating);
+    
+    const newReview = document.createElement('div');
+    newReview.className = 'review-item';
+    newReview.innerHTML = `
+        <div class="review-header">
+            <strong>${name}</strong>
+            <span class="stars-static">${starString}</span>
+        </div>
+        <p>"${text}"</p>
+    `;
+
+    // Masukin ke urutan paling atas
+    reviewList.prepend(newReview);
+
+    // Reset Form
+    document.getElementById('reviewer-name').value = '';
+    document.getElementById('review-text').value = '';
+    selectedRating = 0;
+    updateStars();
+
+    alert("Tetimakasih atas ulasan, saran, dan juga kritik yang anda berikan.");
+}
