@@ -80,3 +80,62 @@ footer {
 	font-size: 0.8rem;
 	color: #555;
 }
+
+/* Review Styles */
+.reviews { padding: 80px 8%; background: #0f0f0f; }
+.container-review { 
+    display: grid; 
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 50px; 
+    margin-top: 40px; 
+}
+
+.review-form { 
+    background: var(--card-bg); 
+    padding: 30px; 
+    border-radius: 8px; 
+    border: 1px solid #222;
+}
+
+.review-form h3 { margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+
+.star-rating { margin-bottom: 15px; font-size: 1.5rem; cursor: pointer; }
+.star { color: #444; transition: 0.3s; }
+.star.active { color: var(--accent); }
+
+.review-form input, .review-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.review-display { 
+    max-height: 500px; 
+    overflow-y: auto; 
+    padding-right: 15px;
+}
+
+.review-item {
+    background: #1a1a1a;
+    padding: 20px;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.review-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 10px; 
+}
+
+.stars-static { color: var(--accent); }
+
+@media screen and (max-width: 768px) {
+    .container-review { grid-template-columns: 1fr; }
+}
